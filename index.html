@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hey-WindowAlert</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/window.css">
+</head>
+<body>
+  <div class="header">
+    <h3>hey-WindowAlert</h3>
+    <p>版本：1.0</p>
+    <a href="">github源码</a>
+  </div>
+  <div class="container clearfix">
+    <h2>类型演示</h2>
+    <div class="demo">
+      <a href="javascript:;" id="default">默认消息提示</a>
+      <a href="javascript:;" id="a">带关闭按钮</a>
+      <a href="javascript:;" id="b">确认弹框</a>
+      <a href="javascript:;" id="c">带表单的弹框</a>
+      <a href="javascript:;" id="d">通用弹框</a>
+    </div>
+    <h2>皮肤选择</h2>
+    <div class="skin">
+      <h3>默认皮肤，待更新...</h3>
+    </div>
+    <h2>使用说明</h2>
+    <div class="config">
+      <h3>使用示例</h3>
+      <p>1.文件引用</p>
+      <xmp>
+        <link rel="stylesheet" href="css/window.css">
+        <script src="js/require.js" data-main="js/main"></script>
+      </xmp>
+      <p>2.html部分</p>
+      <xmp>
+        <a href="javascript:;" id="default">默认消息提示</a>
+      </xmp>
+      <p>3.js调用</p>
+      <xmp>
+        $('#default').click(function () {
+          new w.Window().alert({});
+        });
+      </xmp>
+      <p>4.配置选项</p>
+      <table class="table">
+        <thead>
+          <th>属性名</th>
+          <th>默认值</th>
+          <th>说明</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>width</td><td>400</td><td>弹框的宽度</td>
+          </tr>
+          <tr>
+            <td>min_height</td><td>225</td><td>弹框的最小高度</td>
+          </tr>
+          <tr>
+            <td>title</td><td>系统消息</td><td>弹框标题</td>
+          </tr>
+          <tr>
+            <td>content</td><td>' '</td><td>弹框内容</td>
+          </tr>
+          <tr>
+            <td>hasCloseBtn</td><td>false</td><td>是否有关闭按钮</td>
+          </tr>
+          <tr>
+            <td>hasMask</td><td>true</td><td>是否有遮罩层</td>
+          </tr>
+          <tr>
+            <td>skinClassName</td><td>null</td><td>皮肤名</td>
+          </tr>
+          <tr>
+            <td>isDraggable</td><td>true</td><td>是否可拖动</td>
+          </tr>
+          <tr>
+            <td>dragHandle</td><td>null</td><td>可拖动的部分（class名），默认为整个弹框</td>
+          </tr>
+          <tr>
+            <td>text4AlertBtn</td><td>确定</td><td>alert弹框的按钮文字</td>
+          </tr>
+          <tr>
+            <td>text4ConfirmBtn</td><td>确定</td><td>confirm弹框的按钮文字</td>
+          </tr>
+          <tr>
+          </tr>
+            <td>text4ConfirmBtn</td><td>取消</td><td>取消按钮文字</td>
+          </tr>
+          </tr>
+            <td>text4PromptBtn</td><td>确定</td><td>prompt按钮文字</td>
+          </tr>
+          </tr>
+            <td>isPromptInputPassword</td><td>false</td><td>输入框是否为密码输入</td>
+          </tr>
+          <tr>
+            <td>defaultValue4PromptInput</td><td>' '</td><td>prompt输入框的默认值</td>
+          </tr>
+          <tr>
+            <td>maxlength4PromptInput</td><td>10</td><td>prompt输入框的默认输入长度</td>
+          </tr>
+          <tr>
+            <td>handler4AlertBtn</td><td>null</td><td>alert确定按钮的回调函数</td>
+          </tr>
+          <tr>
+            <td>handler4AlertBtn</td><td>null</td><td>alert确定按钮的回调函数</td>
+          </tr>
+          <tr>
+            <td>handler4CloseBtn</td><td>null</td><td>关闭按钮的回调函数</td>
+          </tr>
+          <tr>
+            <td>handler4ConfirmBtn</td><td>null</td><td>confirm确定按钮的回调函数</td>
+          </tr>
+          <tr>
+            <td>handler4CancelBtn</td><td>null</td><td>取消按钮的回调函数</td>
+          </tr>
+          <tr>
+            <td>handler4PromptBtn</td><td>null</td><td>prompt确定按钮的回调函数</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>5.回调函数用法示例</p>
+      <xmp>
+        //单个绑定示例
+        $('#a').click(function(){
+          var win = new w.Window();
+          win.alert({
+            title:'提示',
+            content: '内容',
+            hasCloseBtn: true,
+            handler4AlertBtn: function(){
+              alert('you click the alert button');
+            },
+            handler4CloseBtn: function(){
+              alert('you click the close button');
+            },
+            skinClassName: 'window_skin_a',
+            text4AlertBtn: '保存',
+            dragHandle: '.window_header'
+          });
+
+        });
+        //多个绑定示例（用on）
+        $('#a').click(function(){
+          var win = new w.Window();
+          win.alert({
+            title:'提示',
+            content: '内容',
+            hasCloseBtn: true,
+            skinClassName: 'window_skin_a',
+            text4AlertBtn: '保存',
+            dragHandle: '.window_header'
+          });
+          win.on('alert', function(){
+            alert('the second alert handler');
+          }).on('alert', function(){
+            alert('the third alert handler');
+          }).on('close', function(){
+            alert('the second close handler');
+          });
+        });
+      </xmp>
+    </div>
+    <div class="xm">
+      hey
+    </div>
+  </div>
+  <div class="footer">
+    <a href="http://eryouhao.github.io" target="_blank">海岛心hey</a>
+  </div>
+  <script src="js/require.js" data-main="js/main"></script>
+</body>
+</html>

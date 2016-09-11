@@ -1,0 +1,94 @@
+/**
+  * WindowAlert by haoeryou
+  * version: 1.0
+  * time: 2016-08-30
+  *
+  */
+
+/* 默认皮肤 */
+.window_boundingBox {
+  position: fixed;
+  box-shadow: 0 0 12px rgba(0,0,0,.5);
+  border-radius: 3px;
+  background: #f7f7f7;
+}
+.window_alertBtn,
+.window_confirmBtn,
+.window_cancelBtn,
+.window_promptBtn {
+  width: 100px;
+  border: none;
+  padding: 5px 0;
+  border-radius: 3px;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  background: #1E90FF;
+  outline: none;
+}
+.window_cancelBtn {
+  background: #ccc;
+}
+.window_header {
+  background: #e3e3e3;
+  text-align: center;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px 5px 0 0;
+}
+.window_body {
+  padding: 10px;
+  line-height: 1.5;
+  min-height: 50px;
+}
+.window_closeBtn {
+  position: absolute;
+  right: 9px;
+  top: 9px;
+  width: 15px;
+  font-size: 12px;
+  height: 15px;
+  line-height: 19px;
+  text-align: center;
+  background: #fc5858;
+  color: #fc5858;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.window_closeBtn:hover {
+  color: #000;
+}
+.window_mask {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .3;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.window_footer {
+  padding: 10px;
+  text-align: center;
+  min-height: 30px;
+}
+.window_cancelBtn {
+  margin-left: 20px;
+}
+.window_promptInputWrapper{
+  text-align: center;
+}
+.window_promptInput {
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  border-radius: 3px;
+  width: 90%;
+  outline: none;
+}
+
+/* 皮肤一 */
+.window_skin_a {
+  background: #eee;
+}
